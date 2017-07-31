@@ -1,5 +1,6 @@
+var port_number = server.listen(process.env.PORT || 3000);
 var mongo = require('mongodb').MongoClient,
-    client = require('socket.io').listen(5000).sockets;
+    client = require('socket.io').listen(port_number).sockets;
 	var express=require('express');
 	var app=express();
     var cors= require('cors');
