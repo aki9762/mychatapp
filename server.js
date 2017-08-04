@@ -37,14 +37,15 @@ var mongo = require('mongodb').MongoClient,
 				});
 				});
 				
-				// socket.on('getFromMessages', function(data){
-					// var username = data.name;
+				socket.on('getGroupMessages', function(data){
+					var refid = data.ref_id;
 					
-					// col.find({name : username}).toArray(function(err, results){
-					// console.log("my "+username+" records", results);
-					 // client.emit('fromoutput', results);
-				// });
-				// });
+					col.find({ref_id : refid}).toArray(function(err, results){
+					console.log("my records", results);
+					 client.emit('MyGroupsmessaegs', results);
+				});
+				});
+			
 				
             //wait for input
             socket.on('input', function(data){

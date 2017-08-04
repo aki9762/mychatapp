@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Added a Procfile."
+git push heroku master
+heroku open
+heroku logs -t
